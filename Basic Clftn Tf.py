@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-# ![Rhyme](https://rhyme.com/assets/img/logo-dark.png)
-# # Task 1: Introduction
+#  Task 1: Introduction
 # This graph describes the problem that we are trying to solve visually.We want to create and train a model that takes an image of a hand written digit as input and predicts the class of that digit, that is, it predicts the digit or it predicts the class of the input image.
 import tensorflow as tf
 
@@ -102,8 +99,7 @@ model = Sequential ([
 # Z = W . X + b
 # The second step in the node is the activation function output:
 # A = f(Z)
-# Graphical representation of a node where the two operations are performed# 
-# ![ReLU](images/1_5.png)
+# Graphical representation of a node where the two operations are performed#
  
 # ### Compiling the Model
 model.compile(
