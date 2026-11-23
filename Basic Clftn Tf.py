@@ -1,3 +1,13 @@
+#Complete workflow to remember
+#1. Load MNIST dataset
+#2. Visualize images and labels
+#3. One-Hot Encode labels (y)
+#4. Reshape images from 28 × 28 to 784 (X)
+#5. Normalize image pixel values
+#6. Create and compile neural network
+#7. Train model using training data
+#8. Evaluate model using test data
+#9. Predict digits and compare with actual labels
 #  Task 1: Introduction
 # This graph describes the problem that we are trying to solve visually.We want to create and train a model that takes an image of a hand written digit as input and predicts the class of that digit, that is, it predicts the digit or it predicts the class of the input image.
 import tensorflow as tf
@@ -11,7 +21,14 @@ from tensorflow.keras.datasets import mnist #mnist has datas
 (x_train, y_train), (x_test, y_test) = mnist.load_data() #these are Numoy multidim arrays
 
 # ### Shapes of Imported Arrays
-print('x train shape', x_train.shape) #no. of egs,each eg has 28 rows and 28 columns
+#x_train	(60000, 28, 28)	60,000 training images
+#y_train	(60000,)	60,000 correct training labels
+#x_test	(10000, 28, 28)	10,000 testing images
+#y_test	(10000,)	10,000 correct testing labels
+#Image	                                    Label
+#X_train[0] → 28 × 28 pixels	            y_train[0] → 5
+print('x train shape', x_train.shape) #no. of egs,each eg has 28 rows and 28 columns. 
+#Dataset has 60,000 images
 print('y train shape', y_train.shape) #28 pixels high n 28p wide #60k dim vector
 print('x_test shape:', x_test.shape)
 print('y_test shape:', y_test.shape) #10k dim vector
@@ -25,10 +42,11 @@ plt.imshow(x_train[0], cmap='binary') #colormap just black n white
 plt.show()
 
 y_train[0]
-print(set(y_train))
+print(set(y_train)) 
+#np.uint8 is integer type, each image is represented by a 10-element target vector that tells the model which digit the image represents.
+#the dataset has 10 classes.The dataset creators collected handwritten images of these 10 digits.
 
 # # Task 3: One Hot Encoding
-
 # After this encoding, every label will be converted to a list with 10 elements and the element at index to the corresponding class will be set to 1, rest will be set to 0:
 # 
 # | original label | one-hot encoded label |
