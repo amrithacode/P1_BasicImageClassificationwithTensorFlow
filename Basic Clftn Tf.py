@@ -85,8 +85,7 @@ y_train_encoded[0]
 # # Task 5: Preprocessing the Examples# 
 # ### Unrolling N-dimensional Arrays to Vectors
 import numpy as np
-x_train_reshaped = np.reshape(x_train, (60000, 784)) #2N parameter as desires shape
-x_test_reshaped = np.reshape(x_test, (10000,784))
+x_train_reshaped = np.reshape(x_train, (60000, 784)) #unrolling: 3D array->2D array, each image is 28x28p-> each image is a vector of 784 values
 print('x_train_reshaped:', x_train_reshaped.shape)
 print('x_test_reshaped:', x_test_reshaped.shape)
 
